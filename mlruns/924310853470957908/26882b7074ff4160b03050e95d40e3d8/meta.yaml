@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/26882b7074ff4160b03050e95d40e3d8/artifacts
+end_time: 1737801129784
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 26882b7074ff4160b03050e95d40e3d8
+run_name: abundant-crab-914
+run_uuid: 26882b7074ff4160b03050e95d40e3d8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737801129770
+status: 3
+tags: []
+user_id: vikasmayura

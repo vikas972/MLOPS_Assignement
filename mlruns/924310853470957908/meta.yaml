@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/924310853470957908
+creation_time: 1737800969671
+experiment_id: '924310853470957908'
+last_update_time: 1737800969671
+lifecycle_stage: active
+name: hyperparameter_optimization

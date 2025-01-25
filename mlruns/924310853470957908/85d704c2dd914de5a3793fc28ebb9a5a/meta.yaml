@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/85d704c2dd914de5a3793fc28ebb9a5a/artifacts
+end_time: 1737801127037
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 85d704c2dd914de5a3793fc28ebb9a5a
+run_name: upbeat-cub-254
+run_uuid: 85d704c2dd914de5a3793fc28ebb9a5a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737801127021
+status: 3
+tags: []
+user_id: vikasmayura

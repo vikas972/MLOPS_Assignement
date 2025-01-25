@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/741621c4b3814bd8a3dc68cf7e7b1ccb/artifacts
+end_time: 1737801136365
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 741621c4b3814bd8a3dc68cf7e7b1ccb
+run_name: aged-jay-170
+run_uuid: 741621c4b3814bd8a3dc68cf7e7b1ccb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737801136346
+status: 3
+tags: []
+user_id: vikasmayura

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/342701089994002838/31f80fdc2de54103b99dd0e1303ed895/artifacts
+end_time: 1737800838995
+entry_point_name: ''
+experiment_id: '342701089994002838'
+lifecycle_stage: active
+run_id: 31f80fdc2de54103b99dd0e1303ed895
+run_name: funny-mule-480
+run_uuid: 31f80fdc2de54103b99dd0e1303ed895
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737800837015
+status: 3
+tags: []
+user_id: vikasmayura

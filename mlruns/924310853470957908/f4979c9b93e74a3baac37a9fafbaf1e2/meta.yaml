@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/f4979c9b93e74a3baac37a9fafbaf1e2/artifacts
+end_time: 1737801126056
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: f4979c9b93e74a3baac37a9fafbaf1e2
+run_name: skillful-vole-31
+run_uuid: f4979c9b93e74a3baac37a9fafbaf1e2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737801126038
+status: 3
+tags: []
+user_id: vikasmayura

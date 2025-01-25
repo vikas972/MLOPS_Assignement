@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/b7c62abe0ce543cdaa2c6b3e22c8e98f/artifacts
+end_time: 1737801134289
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: b7c62abe0ce543cdaa2c6b3e22c8e98f
+run_name: bedecked-shark-648
+run_uuid: b7c62abe0ce543cdaa2c6b3e22c8e98f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737801134271
+status: 3
+tags: []
+user_id: vikasmayura

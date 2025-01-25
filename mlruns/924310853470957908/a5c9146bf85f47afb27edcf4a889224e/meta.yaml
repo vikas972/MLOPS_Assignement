@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/a5c9146bf85f47afb27edcf4a889224e/artifacts
+end_time: 1737801124392
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: a5c9146bf85f47afb27edcf4a889224e
+run_name: grandiose-gnu-921
+run_uuid: a5c9146bf85f47afb27edcf4a889224e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737801124375
+status: 3
+tags: []
+user_id: vikasmayura

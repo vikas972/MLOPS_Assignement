@@ -2,21 +2,23 @@ import os
 import mlflow
 import optuna
 import numpy as np
-from sklearn.datasets import load_diabetes
+import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import datetime
 
-def load_data():
-    """Load and split the diabetes dataset."""
-    diabetes = load_diabetes()
+def load_data(data_path):
+    """Load and split the dataset from CSV."""
+    df = pd.read_csv(data_path)
+    X = df.drop('target', axis=1)
+    y = df['target']
     X_train, X_test, y_train, y_test = train_test_split(
-        diabetes.data, diabetes.target, test_size=0.2, random_state=42
+        X, y, test_size=0.2, random_state=42
     )
     return X_train, X_test, y_train, y_test
 
-def objective(trial):
+def objective(trial, X_train, X_test, y_train, y_test):
     """Optuna objective function for hyperparameter optimization."""
     params = {
         'n_estimators': trial.suggest_int('n_estimators', 10, 100),
@@ -29,22 +31,28 @@ def objective(trial):
     y_pred = model.predict(X_test)
     return mean_squared_error(y_test, y_pred)
 
-if __name__ == "__main__":
+def train_model(data_path, experiment_name):
+    """Train model with MLflow tracking."""
     # Set up MLflow
     mlflow.set_tracking_uri("http://localhost:5000")
-    mlflow.set_experiment("diabetes-prediction")
+    mlflow.set_experiment(experiment_name)
     
     # Load data
-    X_train, X_test, y_train, y_test = load_data()
+    X_train, X_test, y_train, y_test = load_data(data_path)
     
     # Hyperparameter optimization
     study = optuna.create_study(direction="minimize")
-    study.optimize(objective, n_trials=20)
+    study.optimize(lambda trial: objective(trial, X_train, X_test, y_train, y_test), 
+                  n_trials=20)
     
     # Train final model with best parameters
     with mlflow.start_run():
         best_params = study.best_params
         mlflow.log_params(best_params)
+        
+        # Log dataset info
+        mlflow.log_param("data_version", os.path.basename(data_path))
+        mlflow.log_param("dataset_size", len(X_train) + len(X_test))
         
         model = RandomForestRegressor(**best_params, random_state=42)
         model.fit(X_train, y_train)
@@ -58,6 +66,14 @@ if __name__ == "__main__":
         mlflow.log_metric("mse", mse)
         mlflow.log_metric("r2", r2)
         
+        # Log feature importance
+        feature_importance = pd.DataFrame({
+            'feature': X_train.columns,
+            'importance': model.feature_importances_
+        })
+        feature_importance.to_csv("feature_importance.csv", index=False)
+        mlflow.log_artifact("feature_importance.csv")
+        
         # Save model with timestamp
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         model_path = f"models/model_{timestamp}"
@@ -66,4 +82,16 @@ if __name__ == "__main__":
         
         print(f"Best parameters: {best_params}")
         print(f"MSE: {mse:.4f}")
-        print(f"R2 Score: {r2:.4f}") 
+        print(f"R2 Score: {r2:.4f}")
+
+if __name__ == "__main__":
+    # Train models on different dataset versions
+    datasets = [
+        ("data/diabetes_v1.csv", "experiment_v1"),
+        ("data/diabetes_v2.csv", "experiment_v2"),
+        ("data/diabetes_v3.csv", "experiment_v3")
+    ]
+    
+    for data_path, experiment_name in datasets:
+        print(f"\nTraining on {data_path}")
+        train_model(data_path, experiment_name) 

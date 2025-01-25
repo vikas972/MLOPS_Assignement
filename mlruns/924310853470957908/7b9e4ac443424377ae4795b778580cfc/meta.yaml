@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/7b9e4ac443424377ae4795b778580cfc/artifacts
+end_time: 1737801131437
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 7b9e4ac443424377ae4795b778580cfc
+run_name: exultant-doe-904
+run_uuid: 7b9e4ac443424377ae4795b778580cfc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737801131423
+status: 3
+tags: []
+user_id: vikasmayura

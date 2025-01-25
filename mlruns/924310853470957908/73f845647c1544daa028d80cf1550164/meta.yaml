@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/73f845647c1544daa028d80cf1550164/artifacts
+end_time: 1737801138454
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 73f845647c1544daa028d80cf1550164
+run_name: smiling-cub-101
+run_uuid: 73f845647c1544daa028d80cf1550164
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737801138436
+status: 3
+tags: []
+user_id: vikasmayura

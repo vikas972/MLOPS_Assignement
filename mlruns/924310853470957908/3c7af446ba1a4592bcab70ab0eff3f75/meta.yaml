@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/3c7af446ba1a4592bcab70ab0eff3f75/artifacts
+end_time: 1737801128774
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 3c7af446ba1a4592bcab70ab0eff3f75
+run_name: melodic-wren-507
+run_uuid: 3c7af446ba1a4592bcab70ab0eff3f75
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737801128755
+status: 3
+tags: []
+user_id: vikasmayura

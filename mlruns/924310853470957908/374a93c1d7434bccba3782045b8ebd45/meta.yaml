@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/374a93c1d7434bccba3782045b8ebd45/artifacts
+end_time: 1737801129115
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 374a93c1d7434bccba3782045b8ebd45
+run_name: serious-zebra-619
+run_uuid: 374a93c1d7434bccba3782045b8ebd45
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737801129082
+status: 3
+tags: []
+user_id: vikasmayura

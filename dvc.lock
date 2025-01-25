@@ -1,0 +1,12 @@
+schema: '2.0'
+stages:
+  generate_data:
+    cmd: python src/data_generator.py
+    deps:
+    - path: src/data_generator.py
+      md5: 147639d2cf99a58cc779d8b92921f572
+      size: 2288
+    outs:
+    - path: data/dataset.csv
+      md5: d00e787e22ddaf7b8a3eef2d0d34ebb4
+      size: 64992
