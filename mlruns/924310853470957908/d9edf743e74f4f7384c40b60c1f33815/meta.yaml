@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/d9edf743e74f4f7384c40b60c1f33815/artifacts
+end_time: 1737826361838
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: d9edf743e74f4f7384c40b60c1f33815
+run_name: optuna_optimization
+run_uuid: d9edf743e74f4f7384c40b60c1f33815
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826345527
+status: 3
+tags: []
+user_id: vikasmayura

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/ab57cf8de74446af99ef2624f9ab0030/artifacts
+end_time: 1737826350617
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: ab57cf8de74446af99ef2624f9ab0030
+run_name: hilarious-mole-371
+run_uuid: ab57cf8de74446af99ef2624f9ab0030
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826350599
+status: 3
+tags: []
+user_id: vikasmayura
