@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/342701089994002838/730530d168514ca48db096980d729f19/artifacts
+end_time: 1737824220597
+entry_point_name: ''
+experiment_id: '342701089994002838'
+lifecycle_stage: active
+run_id: 730530d168514ca48db096980d729f19
+run_name: efficient-moose-933
+run_uuid: 730530d168514ca48db096980d729f19
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737824218661
+status: 3
+tags: []
+user_id: vikasmayura

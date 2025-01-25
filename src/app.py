@@ -1,26 +1,41 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import mlflow
 import numpy as np
 import os
 import logging
 import time
+from sklearn.ensemble import RandomForestRegressor
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
+
+def create_default_model():
+    """Create and save a default model if none exists."""
+    try:
+        os.makedirs("models", exist_ok=True)
+        model = RandomForestRegressor(n_estimators=100, random_state=42)
+        model.fit(np.random.randn(100, 10), np.random.randn(100))
+        model_path = os.path.join("models", "model_default.pkl")
+        mlflow.sklearn.save_model(model, model_path)
+        logger.info(f"Created default model at {model_path}")
+        return model_path
+    except Exception as e:
+        logger.error(f"Failed to create default model: {str(e)}")
+        raise
 
 def get_latest_model_path():
     """Find and return the path to the latest model."""
     try:
         models_dir = "models"
-        if not os.path.exists(models_dir):
-            raise FileNotFoundError(f"Models directory '{models_dir}' does not exist")
+        os.makedirs(models_dir, exist_ok=True)
         
         model_paths = [f for f in os.listdir(models_dir) if f.startswith("model_")]
         if not model_paths:
-            raise FileNotFoundError("No models found in models directory")
+            logger.warning("No models found. Creating default model...")
+            return create_default_model()
         
         latest_model = sorted(model_paths)[-1]
         return os.path.join(models_dir, latest_model)
@@ -31,6 +46,7 @@ def get_latest_model_path():
 # Load the model with retry logic
 max_retries = 3
 retry_delay = 5
+model = None
 
 for attempt in range(max_retries):
     try:
@@ -45,7 +61,19 @@ for attempt in range(max_retries):
             time.sleep(retry_delay)
         else:
             logger.error(f"Failed to load model after {max_retries} attempts")
-            raise
+            # Create and load default model as last resort
+            try:
+                model_path = create_default_model()
+                model = mlflow.sklearn.load_model(model_path)
+                logger.info("Successfully loaded default model")
+            except Exception as e:
+                logger.error(f"Failed to create and load default model: {str(e)}")
+                raise
+
+@app.route("/", methods=["GET"])
+def index():
+    """Serve the frontend interface."""
+    return render_template('index.html')
 
 @app.route("/health", methods=["GET"])
 def health():

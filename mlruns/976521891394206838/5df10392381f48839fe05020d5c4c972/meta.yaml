@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/976521891394206838/5df10392381f48839fe05020d5c4c972/artifacts
+end_time: 1737825173480
+entry_point_name: ''
+experiment_id: '976521891394206838'
+lifecycle_stage: active
+run_id: 5df10392381f48839fe05020d5c4c972
+run_name: adaptable-gull-265
+run_uuid: 5df10392381f48839fe05020d5c4c972
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737825172071
+status: 3
+tags: []
+user_id: vikasmayura

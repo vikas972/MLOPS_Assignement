@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/342701089994002838/193f9e19edb84dc7a42804143b941725/artifacts
+end_time: 1737825172063
+entry_point_name: ''
+experiment_id: '342701089994002838'
+lifecycle_stage: active
+run_id: 193f9e19edb84dc7a42804143b941725
+run_name: nebulous-grouse-287
+run_uuid: 193f9e19edb84dc7a42804143b941725
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737825170747
+status: 3
+tags: []
+user_id: vikasmayura
