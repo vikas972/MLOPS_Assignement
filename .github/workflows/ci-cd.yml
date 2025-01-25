@@ -10,10 +10,10 @@ jobs:
   linting:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: '3.9'
       
@@ -39,10 +39,10 @@ jobs:
     needs: linting
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: '3.9'
       
@@ -57,20 +57,21 @@ jobs:
           python src/data_generator.py
       
       - name: Upload dataset artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: processed-data
           path: data/dataset.csv
+          retention-days: 1
 
   training:
     needs: preprocessing
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: '3.9'
       
@@ -80,7 +81,7 @@ jobs:
           pip install -r requirements.txt
       
       - name: Download processed data
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: processed-data
           path: data
@@ -97,21 +98,22 @@ jobs:
           python src/train_mlflow.py
       
       - name: Upload model artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: trained-model
           path: |
             models/
             mlruns/
+          retention-days: 1
 
   testing:
     needs: training
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: '3.9'
       
@@ -121,7 +123,7 @@ jobs:
           pip install -r requirements.txt pytest pytest-cov
       
       - name: Download model
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: trained-model
           path: .
@@ -136,10 +138,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       
       - name: Download model
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: trained-model
           path: .
