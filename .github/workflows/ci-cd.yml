@@ -1,49 +1,101 @@
-name: MLOps CI/CD Pipeline
+name: ML Model CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop, feature/*, release/* ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
 
 jobs:
-  test:
+  code-quality:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.9'
-    
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    
-    - name: Lint with pylint
-      run: |
-        pylint src/ --fail-under=7
-    
-    - name: Format check with black
-      run: |
-        black --check src/
-    
-    - name: Run tests
-      run: |
-        pytest tests/
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Run linting
+        run: |
+          pylint src/ --fail-under=7
+          black src/ --check
+          
+      - name: Run tests
+        run: |
+          pytest tests/
 
-  build:
-    needs: test
+  model-training:
+    needs: code-quality
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/release/')
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Build Docker image
-      run: docker build -t mlops-app .
-    
-    - name: Run Docker container
-      run: |
-        docker run -d -p 5000:5000 mlops-app
-        sleep 5
-        curl http://localhost:5000/health 
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Generate dataset
+        run: |
+          python src/data_generator.py
+          
+      - name: Train model
+        run: |
+          mlflow server --host 0.0.0.0 --port 5000 &
+          sleep 5
+          python src/train_mlflow.py
+          
+      - name: Run hyperparameter optimization
+        run: |
+          python src/hyperparameter_tuning.py
+          
+      - name: Archive model artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: model-artifacts
+          path: |
+            models/
+            mlruns/
+
+  model-deployment:
+    needs: model-training
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Download model artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: model-artifacts
+          
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+        
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: false  # Set to true when using a container registry
+          tags: mlops-model:latest
+          
+      - name: Test Docker image
+        run: |
+          docker run -d -p 5001:5001 mlops-model:latest
+          sleep 5
+          curl -X POST http://localhost:5001/predict \
+            -H "Content-Type: application/json" \
+            -d '{"features": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]}' 
