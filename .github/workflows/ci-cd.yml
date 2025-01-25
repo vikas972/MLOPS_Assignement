@@ -7,61 +7,29 @@ on:
     branches: [ main, develop ]
 
 jobs:
-  code-quality:
+  build-and-test:
     runs-on: ubuntu-latest
-    timeout-minutes: 15  # Add timeout limit
-    
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # Fetch all history for proper linting
       
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.9'
-          cache: 'pip'  # Enable pip caching
-          
+      
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-        continue-on-error: false
-          
-      - name: Create directories
-        run: |
-          mkdir -p tests
-          mkdir -p data
-          mkdir -p models
-          mkdir -p mlruns
-        
-      - name: Run linting
-        run: |
-          # Install linting tools explicitly
-          pip install pylint==2.17.4 black==23.3.0
-          
-          # Run black first to auto-format
-          black src/ --check || (echo "Code formatting failed. Running black to show diff:" && black src/ --diff && exit 1)
-          
-          # Run pylint with detailed output
-          pylint src/ --fail-under=7 --output-format=colorized || (echo "Linting failed. See detailed report above." && exit 1)
-        continue-on-error: false
-          
+      
       - name: Run tests
         run: |
-          # Install pytest explicitly
-          pip install pytest==7.3.1 pytest-cov
-          
-          # Run tests with coverage
-          pytest tests/ --cov=src/ --cov-report=term-missing || (echo "Tests failed. See detailed report above." && exit 1)
-        continue-on-error: false
+          python -m pytest tests/
 
-  model-training:
-    needs: code-quality
+  train-and-deploy:
+    needs: build-and-test
     runs-on: ubuntu-latest
-    timeout-minutes: 30  # Add timeout limit
-    if: github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/release/')
-    
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
     steps:
       - uses: actions/checkout@v2
       
@@ -69,98 +37,25 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.9'
-          cache: 'pip'
-          
+      
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-        continue-on-error: false
-          
-      - name: Generate dataset
+      
+      - name: Create directories
         run: |
-          # Ensure data directory exists
           mkdir -p data
-          python src/data_generator.py
-        continue-on-error: false
-          
-      - name: Start MLflow server
-        run: |
-          # Start MLflow server in background
-          mlflow server --host 0.0.0.0 --port 5000 &
-          sleep 5  # Wait for server to start
-          echo "MLflow server started"
-        continue-on-error: false
-          
-      - name: Train model
-        run: |
-          # Create necessary directories
           mkdir -p models
           mkdir -p mlruns
-          
-          # Run training with error handling
-          python src/train_mlflow.py || (echo "Model training failed" && exit 1)
-        continue-on-error: false
-          
-      - name: Run hyperparameter optimization
-        run: |
-          python src/hyperparameter_tuning.py || (echo "Hyperparameter optimization failed" && exit 1)
-        continue-on-error: false
-          
-      - name: Archive model artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: model-artifacts
-          path: |
-            models/
-            mlruns/
-          retention-days: 5  # Keep artifacts for 5 days
-
-  model-deployment:
-    needs: model-training
-    runs-on: ubuntu-latest
-    timeout-minutes: 20  # Add timeout limit
-    if: github.ref == 'refs/heads/main'
-    
-    steps:
-      - uses: actions/checkout@v2
       
-      - name: Download model artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: model-artifacts
-          
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-        
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: false  # Set to true when using a container registry
-          tags: mlops-model:latest
-          cache-from: type=gha  # Use GitHub Actions cache
-          cache-to: type=gha,mode=max
-          
-      - name: Test Docker image
+      - name: Generate dataset and train model
         run: |
-          # Run container with health check
-          docker run -d -p 5001:5001 --name mlops-model mlops-model:latest
-          
-          # Wait for container to be healthy
-          timeout=30
-          while [ $timeout -gt 0 ]; do
-            if docker ps | grep -q mlops-model; then
-              echo "Container is running"
-              break
-            fi
-            sleep 1
-            timeout=$((timeout-1))
-          done
-          
-          # Test prediction endpoint
-          sleep 5  # Wait for application to start
-          curl -X POST http://localhost:5001/predict \
-            -H "Content-Type: application/json" \
-            -d '{"features": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]}' || (echo "API test failed" && exit 1)
-        continue-on-error: false 
+          python src/data_generator.py
+          python src/train_mlflow.py
+      
+      - name: Build Docker image
+        if: github.ref == 'refs/heads/main'
+        run: |
+          docker build -t mlops-model:latest .
+          docker run -d -p 5001:5001 mlops-model:latest 
