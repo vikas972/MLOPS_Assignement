@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/0468f0e406e5427d9971e5945311b700/artifacts
+end_time: 1737822892337
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 0468f0e406e5427d9971e5945311b700
+run_name: luxuriant-stoat-557
+run_uuid: 0468f0e406e5427d9971e5945311b700
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737822892318
+status: 3
+tags: []
+user_id: vikasmayura

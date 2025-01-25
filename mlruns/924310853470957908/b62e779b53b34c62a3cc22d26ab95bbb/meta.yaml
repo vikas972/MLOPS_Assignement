@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/b62e779b53b34c62a3cc22d26ab95bbb/artifacts
+end_time: 1737822886779
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: b62e779b53b34c62a3cc22d26ab95bbb
+run_name: flawless-horse-179
+run_uuid: b62e779b53b34c62a3cc22d26ab95bbb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737822886757
+status: 3
+tags: []
+user_id: vikasmayura

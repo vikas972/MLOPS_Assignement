@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/d37fd7e523de4664ba2180916a1b9e61/artifacts
+end_time: 1737822895629
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: d37fd7e523de4664ba2180916a1b9e61
+run_name: loud-smelt-207
+run_uuid: d37fd7e523de4664ba2180916a1b9e61
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737822895610
+status: 3
+tags: []
+user_id: vikasmayura

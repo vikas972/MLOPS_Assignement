@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/814bb0d3b5ed4343ac00bbda90038ec1/artifacts
+end_time: 1737822890924
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 814bb0d3b5ed4343ac00bbda90038ec1
+run_name: victorious-flea-44
+run_uuid: 814bb0d3b5ed4343ac00bbda90038ec1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737822890905
+status: 3
+tags: []
+user_id: vikasmayura

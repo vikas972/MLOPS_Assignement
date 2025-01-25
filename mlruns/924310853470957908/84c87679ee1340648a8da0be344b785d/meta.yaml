@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/84c87679ee1340648a8da0be344b785d/artifacts
+end_time: 1737822889838
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 84c87679ee1340648a8da0be344b785d
+run_name: useful-hound-113
+run_uuid: 84c87679ee1340648a8da0be344b785d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737822889815
+status: 3
+tags: []
+user_id: vikasmayura

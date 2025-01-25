@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/ec39a2be124542c8abb24272f89f3c21/artifacts
+end_time: 1737822885331
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: ec39a2be124542c8abb24272f89f3c21
+run_name: chill-lark-369
+run_uuid: ec39a2be124542c8abb24272f89f3c21
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737822885311
+status: 3
+tags: []
+user_id: vikasmayura

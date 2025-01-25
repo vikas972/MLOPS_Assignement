@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/f94d71764f3645ab85833056f5d2bfeb/artifacts
+end_time: 1737822888295
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: f94d71764f3645ab85833056f5d2bfeb
+run_name: agreeable-robin-32
+run_uuid: f94d71764f3645ab85833056f5d2bfeb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737822888270
+status: 3
+tags: []
+user_id: vikasmayura

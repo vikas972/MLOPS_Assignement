@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/b31c90f336704bbcb4efeebdc19c996a/artifacts
+end_time: 1737822882744
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: b31c90f336704bbcb4efeebdc19c996a
+run_name: sneaky-wasp-629
+run_uuid: b31c90f336704bbcb4efeebdc19c996a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737822882727
+status: 3
+tags: []
+user_id: vikasmayura

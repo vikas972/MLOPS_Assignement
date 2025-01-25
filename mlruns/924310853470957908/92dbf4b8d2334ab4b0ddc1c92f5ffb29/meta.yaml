@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/92dbf4b8d2334ab4b0ddc1c92f5ffb29/artifacts
+end_time: 1737822894321
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 92dbf4b8d2334ab4b0ddc1c92f5ffb29
+run_name: skittish-fish-169
+run_uuid: 92dbf4b8d2334ab4b0ddc1c92f5ffb29
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737822894300
+status: 3
+tags: []
+user_id: vikasmayura

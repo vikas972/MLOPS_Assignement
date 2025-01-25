@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/00fc45ca2411402d828b94b8aaf6945a/artifacts
+end_time: 1737822885871
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 00fc45ca2411402d828b94b8aaf6945a
+run_name: incongruous-frog-711
+run_uuid: 00fc45ca2411402d828b94b8aaf6945a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737822885848
+status: 3
+tags: []
+user_id: vikasmayura
