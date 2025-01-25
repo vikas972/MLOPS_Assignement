@@ -160,17 +160,61 @@ jobs:
           name: trained-model
           path: .
       
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      - name: Install curl
+        run: sudo apt-get install -y curl
+      
       - name: Build Docker image
         run: |
           docker build -t mlops-model:latest .
       
-      - name: Test Docker deployment
+      - name: Deploy and test container
         run: |
-          docker run -d -p 5001:5001 mlops-model:latest
-          sleep 5
-          curl http://localhost:5001/health
+          # Run the container
+          docker run -d --name mlops-container -p 5001:5001 mlops-model:latest
+          
+          # Wait for container to be ready
+          echo "Waiting for container to start..."
+          sleep 10
+          
+          # Check container status
+          docker ps
+          docker logs mlops-container
+          
+          # Test with retry logic
+          max_retries=5
+          retry_count=0
+          
+          while [ $retry_count -lt $max_retries ]
+          do
+            if curl -f http://localhost:5001/health; then
+              echo "Health check passed!"
+              break
+            else
+              echo "Attempt $((retry_count+1)) failed, retrying in 5 seconds..."
+              sleep 5
+              retry_count=$((retry_count+1))
+            fi
+          done
+          
+          if [ $retry_count -eq $max_retries ]; then
+            echo "Container health check failed after $max_retries attempts"
+            exit 1
+          fi
+      
+      - name: Test prediction endpoint
+        run: |
+          curl -X POST http://localhost:5001/predict \
+            -H "Content-Type: application/json" \
+            -d '{"features": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]}'
       
       - name: Tag release
+        if: success()
         run: |
           VERSION=$(date +%Y%m%d_%H%M%S)
-          docker tag mlops-model:latest mlops-model:$VERSION 
+          docker tag mlops-model:latest mlops-model:$VERSION
+          echo "Tagged release version: $VERSION" 
