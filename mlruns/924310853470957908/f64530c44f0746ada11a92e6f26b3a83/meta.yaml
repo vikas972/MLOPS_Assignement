@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/f64530c44f0746ada11a92e6f26b3a83/artifacts
+end_time: 1737826688870
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: f64530c44f0746ada11a92e6f26b3a83
+run_name: intelligent-koi-397
+run_uuid: f64530c44f0746ada11a92e6f26b3a83
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826688852
+status: 3
+tags: []
+user_id: vikasmayura

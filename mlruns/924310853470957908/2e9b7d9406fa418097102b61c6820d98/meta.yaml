@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/2e9b7d9406fa418097102b61c6820d98/artifacts
+end_time: 1737826686262
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 2e9b7d9406fa418097102b61c6820d98
+run_name: respected-turtle-773
+run_uuid: 2e9b7d9406fa418097102b61c6820d98
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826686244
+status: 3
+tags: []
+user_id: vikasmayura

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/b6641a507cf54133bde2c55af98a899b/artifacts
+end_time: 1737826678802
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: b6641a507cf54133bde2c55af98a899b
+run_name: sneaky-squirrel-695
+run_uuid: b6641a507cf54133bde2c55af98a899b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826678787
+status: 3
+tags: []
+user_id: vikasmayura

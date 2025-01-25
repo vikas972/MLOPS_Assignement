@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/f5e7c18587e949fe87824ecbc13bd57d/artifacts
+end_time: 1737826692776
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: f5e7c18587e949fe87824ecbc13bd57d
+run_name: illustrious-croc-392
+run_uuid: f5e7c18587e949fe87824ecbc13bd57d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826692748
+status: 3
+tags: []
+user_id: vikasmayura

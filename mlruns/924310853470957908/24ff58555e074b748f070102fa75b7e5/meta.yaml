@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/24ff58555e074b748f070102fa75b7e5/artifacts
+end_time: 1737826680194
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 24ff58555e074b748f070102fa75b7e5
+run_name: ambitious-sponge-640
+run_uuid: 24ff58555e074b748f070102fa75b7e5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826680173
+status: 3
+tags: []
+user_id: vikasmayura
