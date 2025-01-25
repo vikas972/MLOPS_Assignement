@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/976521891394206838/9fc178ff520c4b918bbb5f52dea331df/artifacts
+end_time: 1737825875817
+entry_point_name: ''
+experiment_id: '976521891394206838'
+lifecycle_stage: active
+run_id: 9fc178ff520c4b918bbb5f52dea331df
+run_name: loud-croc-379
+run_uuid: 9fc178ff520c4b918bbb5f52dea331df
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737825874058
+status: 3
+tags: []
+user_id: vikasmayura

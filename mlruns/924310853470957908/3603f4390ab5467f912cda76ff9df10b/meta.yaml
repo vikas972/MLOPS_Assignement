@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/3603f4390ab5467f912cda76ff9df10b/artifacts
+end_time: 1737826015168
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 3603f4390ab5467f912cda76ff9df10b
+run_name: capable-lamb-869
+run_uuid: 3603f4390ab5467f912cda76ff9df10b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826015155
+status: 3
+tags: []
+user_id: vikasmayura

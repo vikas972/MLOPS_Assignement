@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/d40e50b5403748c98644ba58b11526ad/artifacts
+end_time: 1737826018178
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: d40e50b5403748c98644ba58b11526ad
+run_name: rebellious-lark-805
+run_uuid: d40e50b5403748c98644ba58b11526ad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826018163
+status: 3
+tags: []
+user_id: vikasmayura
