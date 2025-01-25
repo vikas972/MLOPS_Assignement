@@ -27,7 +27,7 @@ def create_default_model():
         raise
 
 def get_latest_model_path():
-    """Find and return the path to the latest model."""
+    """Find and return the path"""
     try:
         models_dir = "models"
         os.makedirs(models_dir, exist_ok=True)
