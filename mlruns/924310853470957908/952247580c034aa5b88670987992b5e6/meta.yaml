@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/952247580c034aa5b88670987992b5e6/artifacts
+end_time: 1737826019331
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 952247580c034aa5b88670987992b5e6
+run_name: exultant-grouse-201
+run_uuid: 952247580c034aa5b88670987992b5e6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826019316
+status: 3
+tags: []
+user_id: vikasmayura

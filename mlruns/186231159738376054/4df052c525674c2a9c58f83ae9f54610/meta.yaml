@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/186231159738376054/4df052c525674c2a9c58f83ae9f54610/artifacts
+end_time: 1737824218648
+entry_point_name: ''
+experiment_id: '186231159738376054'
+lifecycle_stage: active
+run_id: 4df052c525674c2a9c58f83ae9f54610
+run_name: beautiful-shrike-168
+run_uuid: 4df052c525674c2a9c58f83ae9f54610
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737824216417
+status: 3
+tags: []
+user_id: vikasmayura

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/f042fd5043f14842be84b27ef6d31f35/artifacts
+end_time: 1737826345756
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: f042fd5043f14842be84b27ef6d31f35
+run_name: beautiful-hound-526
+run_uuid: f042fd5043f14842be84b27ef6d31f35
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826345739
+status: 3
+tags: []
+user_id: vikasmayura

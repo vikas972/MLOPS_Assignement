@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/b048362a085c453aa0e91bb70dc5cdcf/artifacts
+end_time: 1737826014269
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: b048362a085c453aa0e91bb70dc5cdcf
+run_name: worried-lamb-551
+run_uuid: b048362a085c453aa0e91bb70dc5cdcf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826014253
+status: 3
+tags: []
+user_id: vikasmayura

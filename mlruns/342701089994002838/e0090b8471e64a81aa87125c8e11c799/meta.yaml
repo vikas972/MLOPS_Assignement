@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/342701089994002838/e0090b8471e64a81aa87125c8e11c799/artifacts
+end_time: 1737825874049
+entry_point_name: ''
+experiment_id: '342701089994002838'
+lifecycle_stage: active
+run_id: e0090b8471e64a81aa87125c8e11c799
+run_name: debonair-ape-975
+run_uuid: e0090b8471e64a81aa87125c8e11c799
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737825872465
+status: 3
+tags: []
+user_id: vikasmayura

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/8966c3290756412dba42806537557177/artifacts
+end_time: 1737826357222
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 8966c3290756412dba42806537557177
+run_name: upbeat-tern-626
+run_uuid: 8966c3290756412dba42806537557177
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826357205
+status: 3
+tags: []
+user_id: vikasmayura

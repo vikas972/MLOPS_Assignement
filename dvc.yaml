@@ -1,24 +1,24 @@
 stages:
-  generate_data:
-    cmd: python src/data_generator.py
+  prepare:
+    cmd: python3 src/data_generator.py
     deps:
       - src/data_generator.py
     outs:
       - data/dataset.csv
   
-  train_model:
-    cmd: python src/train_mlflow.py
+  train:
+    cmd: python3 src/train_mlflow.py
     deps:
       - src/train_mlflow.py
       - data/dataset.csv
     outs:
-      - models
+      - models/
     metrics:
       - metrics.json:
           cache: false
   
-  optimize_hyperparameters:
-    cmd: python src/hyperparameter_tuning.py
+  optimize:
+    cmd: python3 src/hyperparameter_tuning.py
     deps:
       - src/hyperparameter_tuning.py
       - data/dataset.csv

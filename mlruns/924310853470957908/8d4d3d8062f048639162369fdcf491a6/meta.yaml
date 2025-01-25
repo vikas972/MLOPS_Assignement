@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/8d4d3d8062f048639162369fdcf491a6/artifacts
+end_time: 1737826356641
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 8d4d3d8062f048639162369fdcf491a6
+run_name: entertaining-colt-3
+run_uuid: 8d4d3d8062f048639162369fdcf491a6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826356625
+status: 3
+tags: []
+user_id: vikasmayura

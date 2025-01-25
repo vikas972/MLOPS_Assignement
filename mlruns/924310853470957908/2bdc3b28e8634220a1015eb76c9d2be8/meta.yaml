@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/2bdc3b28e8634220a1015eb76c9d2be8/artifacts
+end_time: 1737826352323
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 2bdc3b28e8634220a1015eb76c9d2be8
+run_name: industrious-crane-10
+run_uuid: 2bdc3b28e8634220a1015eb76c9d2be8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826352297
+status: 3
+tags: []
+user_id: vikasmayura

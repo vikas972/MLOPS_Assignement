@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/186231159738376054/2f277334b8f0454ea0f6b1034d6af61a/artifacts
+end_time: 1737825170739
+entry_point_name: ''
+experiment_id: '186231159738376054'
+lifecycle_stage: active
+run_id: 2f277334b8f0454ea0f6b1034d6af61a
+run_name: enthused-croc-282
+run_uuid: 2f277334b8f0454ea0f6b1034d6af61a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737825167921
+status: 3
+tags: []
+user_id: vikasmayura

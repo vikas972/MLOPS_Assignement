@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/e9853e8a0bad43cfa5c17f65a739fb7d/artifacts
+end_time: 1737822896195
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: e9853e8a0bad43cfa5c17f65a739fb7d
+run_name: receptive-crow-767
+run_uuid: e9853e8a0bad43cfa5c17f65a739fb7d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737822896169
+status: 3
+tags: []
+user_id: vikasmayura

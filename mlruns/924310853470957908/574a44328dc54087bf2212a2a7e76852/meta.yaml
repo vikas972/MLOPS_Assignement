@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/574a44328dc54087bf2212a2a7e76852/artifacts
+end_time: 1737826346998
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 574a44328dc54087bf2212a2a7e76852
+run_name: omniscient-rook-974
+run_uuid: 574a44328dc54087bf2212a2a7e76852
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826346981
+status: 3
+tags: []
+user_id: vikasmayura

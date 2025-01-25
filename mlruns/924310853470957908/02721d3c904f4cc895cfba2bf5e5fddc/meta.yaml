@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/02721d3c904f4cc895cfba2bf5e5fddc/artifacts
+end_time: 1737822890508
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 02721d3c904f4cc895cfba2bf5e5fddc
+run_name: puzzled-jay-986
+run_uuid: 02721d3c904f4cc895cfba2bf5e5fddc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737822890485
+status: 3
+tags: []
+user_id: vikasmayura

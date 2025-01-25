@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/a51c79e230794852869ad84dbb20249c/artifacts
+end_time: 1737826018405
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: a51c79e230794852869ad84dbb20249c
+run_name: rumbling-asp-107
+run_uuid: a51c79e230794852869ad84dbb20249c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826018389
+status: 3
+tags: []
+user_id: vikasmayura

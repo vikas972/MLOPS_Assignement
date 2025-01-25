@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/976521891394206838/8de8bfc3824f4e8c9894b4bcc75801f1/artifacts
+end_time: 1737825395772
+entry_point_name: ''
+experiment_id: '976521891394206838'
+lifecycle_stage: active
+run_id: 8de8bfc3824f4e8c9894b4bcc75801f1
+run_name: classy-boar-726
+run_uuid: 8de8bfc3824f4e8c9894b4bcc75801f1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737825394367
+status: 3
+tags: []
+user_id: vikasmayura

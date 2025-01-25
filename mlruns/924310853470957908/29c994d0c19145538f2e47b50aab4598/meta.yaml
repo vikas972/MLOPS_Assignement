@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/29c994d0c19145538f2e47b50aab4598/artifacts
+end_time: 1737826354006
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 29c994d0c19145538f2e47b50aab4598
+run_name: vaunted-turtle-415
+run_uuid: 29c994d0c19145538f2e47b50aab4598
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826353989
+status: 3
+tags: []
+user_id: vikasmayura

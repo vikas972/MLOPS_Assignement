@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/6c0ff80c9db849b2b0c5d3cc177720b3/artifacts
+end_time: 1737822887646
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 6c0ff80c9db849b2b0c5d3cc177720b3
+run_name: rare-fly-15
+run_uuid: 6c0ff80c9db849b2b0c5d3cc177720b3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737822887620
+status: 3
+tags: []
+user_id: vikasmayura

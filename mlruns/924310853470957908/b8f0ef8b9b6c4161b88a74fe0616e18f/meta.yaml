@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/b8f0ef8b9b6c4161b88a74fe0616e18f/artifacts
+end_time: 1737826350866
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: b8f0ef8b9b6c4161b88a74fe0616e18f
+run_name: delightful-mule-931
+run_uuid: b8f0ef8b9b6c4161b88a74fe0616e18f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826350850
+status: 3
+tags: []
+user_id: vikasmayura

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/dda79c469b174d029423a6e2bc967105/artifacts
+end_time: 1737826017128
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: dda79c469b174d029423a6e2bc967105
+run_name: whimsical-newt-49
+run_uuid: dda79c469b174d029423a6e2bc967105
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826017115
+status: 3
+tags: []
+user_id: vikasmayura
