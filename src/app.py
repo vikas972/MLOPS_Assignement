@@ -24,7 +24,7 @@ def health():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    """Prediction endpoint changed to POST."""
+    """Prediction endpoint."""
     try:
         data = request.get_json()
         features = np.array(data['features']).reshape(1, -1)
