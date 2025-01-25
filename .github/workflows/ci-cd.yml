@@ -7,7 +7,28 @@ on:
     branches: [ main, develop ]
 
 jobs:
-  build-and-test:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      
+      - name: Install linting dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install black pylint
+      
+      - name: Run linting checks
+        run: |
+          black --check src/
+          pylint src/ --fail-under=7
+
+  preprocessing:
+    needs: linting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,13 +43,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
-      - name: Run tests
+      - name: Generate and preprocess dataset
         run: |
-          mkdir -p tests
-          python -m pytest tests/
+          mkdir -p data
+          python src/data_generator.py
+      
+      - name: Upload dataset artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: processed-data
+          path: data/dataset.csv
 
-  train-and-deploy:
-    needs: build-and-test
+  training:
+    needs: preprocessing
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
     steps:
@@ -44,27 +71,82 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
-      - name: Create directories
-        run: |
-          mkdir -p data
-          mkdir -p models
-          mkdir -p mlruns
+      - name: Download processed data
+        uses: actions/download-artifact@v2
+        with:
+          name: processed-data
+          path: data
       
-      - name: Start MLflow server
+      - name: Setup MLflow
         run: |
+          mkdir -p mlruns
           mlflow server --host 0.0.0.0 --port 5000 &
           sleep 5
       
-      - name: Generate dataset and train model
+      - name: Train model
         run: |
-          python src/data_generator.py
           export MLFLOW_TRACKING_URI=http://localhost:5000
           python src/train_mlflow.py
       
-      - name: Build and test Docker image
-        if: github.ref == 'refs/heads/main'
+      - name: Upload model artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: trained-model
+          path: |
+            models/
+            mlruns/
+
+  testing:
+    needs: training
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pytest pytest-cov
+      
+      - name: Download model
+        uses: actions/download-artifact@v2
+        with:
+          name: trained-model
+          path: .
+      
+      - name: Run tests
+        run: |
+          mkdir -p tests
+          python -m pytest tests/ --cov=src/ --cov-report=term-missing
+
+  deployment:
+    needs: testing
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Download model
+        uses: actions/download-artifact@v2
+        with:
+          name: trained-model
+          path: .
+      
+      - name: Build Docker image
         run: |
           docker build -t mlops-model:latest .
+      
+      - name: Test Docker deployment
+        run: |
           docker run -d -p 5001:5001 mlops-model:latest
           sleep 5
-          curl http://localhost:5001/health 
+          curl http://localhost:5001/health
+      
+      - name: Tag release
+        run: |
+          VERSION=$(date +%Y%m%d_%H%M%S)
+          docker tag mlops-model:latest mlops-model:$VERSION 
