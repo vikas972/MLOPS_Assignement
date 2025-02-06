@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/6464f3a49cea42aab86c98c67db55880/artifacts
+end_time: 1737826684079
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 6464f3a49cea42aab86c98c67db55880
+run_name: hilarious-stork-969
+run_uuid: 6464f3a49cea42aab86c98c67db55880
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826684058
+status: 3
+tags: []
+user_id: vikasmayura

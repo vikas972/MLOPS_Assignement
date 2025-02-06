@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/0285e1acb73b4157a0d527b5f0d5cf75/artifacts
+end_time: 1737826688404
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 0285e1acb73b4157a0d527b5f0d5cf75
+run_name: masked-toad-813
+run_uuid: 0285e1acb73b4157a0d527b5f0d5cf75
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826688385
+status: 3
+tags: []
+user_id: vikasmayura

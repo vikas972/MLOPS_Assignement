@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/584907355a2343df8de4f09d0083d5dc/artifacts
+end_time: 1737826678992
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 584907355a2343df8de4f09d0083d5dc
+run_name: useful-hen-575
+run_uuid: 584907355a2343df8de4f09d0083d5dc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826678974
+status: 3
+tags: []
+user_id: vikasmayura

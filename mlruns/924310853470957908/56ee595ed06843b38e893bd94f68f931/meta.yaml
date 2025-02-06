@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/56ee595ed06843b38e893bd94f68f931/artifacts
+end_time: 1737826691852
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 56ee595ed06843b38e893bd94f68f931
+run_name: omniscient-dove-353
+run_uuid: 56ee595ed06843b38e893bd94f68f931
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826691834
+status: 3
+tags: []
+user_id: vikasmayura

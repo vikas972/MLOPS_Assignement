@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/8aa0cb9da75144ae9634938010d2110d/artifacts
+end_time: 1737826692154
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 8aa0cb9da75144ae9634938010d2110d
+run_name: valuable-conch-590
+run_uuid: 8aa0cb9da75144ae9634938010d2110d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826692133
+status: 3
+tags: []
+user_id: vikasmayura

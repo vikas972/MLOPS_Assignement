@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/82ed07d3cc764896ac848350cc80febb/artifacts
+end_time: 1737826679933
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: 82ed07d3cc764896ac848350cc80febb
+run_name: loud-grouse-327
+run_uuid: 82ed07d3cc764896ac848350cc80febb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826679912
+status: 3
+tags: []
+user_id: vikasmayura

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/f78ba9ff0eb54c8283fb070ee24e23ff/artifacts
+end_time: 1737826693020
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: f78ba9ff0eb54c8283fb070ee24e23ff
+run_name: melodic-rat-165
+run_uuid: f78ba9ff0eb54c8283fb070ee24e23ff
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826693001
+status: 3
+tags: []
+user_id: vikasmayura

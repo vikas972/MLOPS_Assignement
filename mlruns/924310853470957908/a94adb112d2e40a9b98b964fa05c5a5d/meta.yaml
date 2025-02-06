@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/924310853470957908/a94adb112d2e40a9b98b964fa05c5a5d/artifacts
+end_time: 1737826687138
+entry_point_name: ''
+experiment_id: '924310853470957908'
+lifecycle_stage: active
+run_id: a94adb112d2e40a9b98b964fa05c5a5d
+run_name: adventurous-mole-787
+run_uuid: a94adb112d2e40a9b98b964fa05c5a5d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737826687117
+status: 3
+tags: []
+user_id: vikasmayura
